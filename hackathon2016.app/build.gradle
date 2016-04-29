@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'org.apache.commons:commons-lang3:3.4'
     compile project(':hackathon2016.lib')
+    compile 'com.github.lzyzsd:circleprogress:1.1.0@aar'
 }
