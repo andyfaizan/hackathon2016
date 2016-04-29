@@ -37,11 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FullscreenScheduleActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen_schedule"
-            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".ScheduleActivity"></activity>
     </application>
 
 </manifest>

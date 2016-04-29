@@ -95,9 +95,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
-                        Intent intent = new Intent(LocationActivity.this, FullscreenScheduleActivity.class);
+                        Intent intent = new Intent(LocationActivity.this, ScheduleActivity.class);
                         startActivity(intent);
-                        // finish();
                         return false;
                     }
                 });
