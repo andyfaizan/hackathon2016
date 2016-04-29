@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hackathon2016.iml" filepath="$PROJECT_DIR$/Hackathon2016.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hackathon2016.app/hackathon2016.app.iml" filepath="$PROJECT_DIR$/hackathon2016.app/hackathon2016.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hackathon2016.lib/hackathon2016.lib.iml" filepath="$PROJECT_DIR$/hackathon2016.lib/hackathon2016.lib.iml" />
+    </modules>
+  </component>
+</project>

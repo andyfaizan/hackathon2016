@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/mohantypunit/Downloads/Hackathon2016/SampleProject/Hackathon2016/hackathon2016.lib/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/home/mohantypunit/Downloads/Hackathon2016/SampleProject/Hackathon2016/hackathon2016.lib/src/debug/jniLibs"/></dataSet></merger>
