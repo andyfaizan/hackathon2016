@@ -1,2 +1,2 @@
 # hackathon2016
-Android Wearable App for DSA track
+Android Phone/Wearable App for DSA track
