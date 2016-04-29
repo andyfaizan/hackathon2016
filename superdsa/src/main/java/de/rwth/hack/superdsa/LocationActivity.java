@@ -25,6 +25,7 @@ import de.dsa.hackathon2016.lib.VehicleStatusUtils;
 public class LocationActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private Marker shownMarker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,20 +61,22 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                 }
                 float lat = vehicleStatus.getGpsLatitude();
                 float lon = vehicleStatus.getGpsLongitude();
-                LatLng nearestLocation = new LatLng(lat,lon);
+                LatLng nearestLocation = new LatLng(lat, lon);
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
                 List<Marker> markersList = new ArrayList<Marker>();
                 final CameraUpdate cu;
 
-                Marker nearestMarker = mMap.addMarker(new MarkerOptions().position(nearestLocation).title("Nearest service centre"));
+                Marker nearestMarker = mMap.addMarker(new MarkerOptions().position(nearestLocation).title("Goodwill Motor Works, Friedensplatz 16"));
+                nearestMarker.showInfoWindow();
                 markersList.add(nearestMarker);
+                shownMarker = nearestMarker;
 
-                LatLng fakeLocation = new LatLng(lat + 0.01,lon - 0.01);
-                Marker fakeMarker = mMap.addMarker(new MarkerOptions().position(fakeLocation).title("Service centre 2"));
+                LatLng fakeLocation = new LatLng(lat + 0.01, lon - 0.01);
+                Marker fakeMarker = mMap.addMarker(new MarkerOptions().position(fakeLocation).title("Super Auto, Pariser Straße 22"));
                 markersList.add(fakeMarker);
 
-                LatLng anotherFakeLocation = new LatLng(lat + 0.02,lon + 0.02);
-                Marker anotherFakeMarker= mMap.addMarker(new MarkerOptions().position(anotherFakeLocation).title("Service centre 3"));
+                LatLng anotherFakeLocation = new LatLng(lat + 0.02, lon + 0.02);
+                Marker anotherFakeMarker = mMap.addMarker(new MarkerOptions().position(anotherFakeLocation).title("Fahren Wir, Marktplatz 112"));
                 markersList.add(anotherFakeMarker);
 
                 for (Marker m : markersList) {
@@ -88,16 +91,22 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                     @Override
                     public void onMapLoaded() {
                         mMap.animateCamera(cu);
-
                     }
                 });
 
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
+                        marker.showInfoWindow();
+                        return false;
+                    }
+                });
+
+                mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(Marker marker) {
                         Intent intent = new Intent(LocationActivity.this, ScheduleActivity.class);
                         startActivity(intent);
-                        return false;
                     }
                 });
             }
