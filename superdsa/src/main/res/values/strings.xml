@@ -25,6 +25,7 @@
     <string name="workshop_app">Appointment</string>
     <string name="health">Health</string>
     <string name="current_data">Go Live</string>
+    <string name="logout">Log Out</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
