@@ -46,7 +46,9 @@ public class MainWSActivity extends Activity {
         customization.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainWSActivity.this, Customization.class);
+                Bundle b = new Bundle();
+                startActivity(intent);
             }
         });
     }
