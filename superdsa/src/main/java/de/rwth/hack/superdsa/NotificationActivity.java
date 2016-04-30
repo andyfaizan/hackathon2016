@@ -137,7 +137,7 @@ public class NotificationActivity extends AppCompatActivity {
                             startActivity(intent1);
                         }
                         if (item.getItemId() == R.id.logout) {
-                            Intent intent1=new Intent(NotificationActivity.this, MainActivity.class);
+                            Intent intent1=new Intent(NotificationActivity.this, LoginActivity.class);
                             startActivity(intent1);
                         }
                         return true;
