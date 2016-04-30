@@ -37,6 +37,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="de.rwth.hack.superdsa.NotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATION" />
+
+                <category android:name="android.intent.category.NOTFICATION" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".CurrentDataActivity" />
         <activity android:name=".HealthActivity" />

@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.flipboard.bottomsheet.BottomSheetLayout;
@@ -14,15 +18,23 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.rwth.hack.superdsa.R;
+import de.dsa.hackathon2016.lib.IVehicleStatus;
+import de.dsa.hackathon2016.lib.VehicleStatusReceiver;
+import de.dsa.hackathon2016.lib.VehicleStatusUtils;
+
+import static de.rwth.hack.superdsa.R.layout.activity_notification;
 
 /**
  * The main activity, to show the data of a single vehicle retrieved from the server.
  */
-public class MainActivity extends AppCompatActivity {
+public class NotificationActivity extends AppCompatActivity {
     private static final String TITLE = "title";
     private static final String VALUE = "value";
     /**
@@ -35,9 +47,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(activity_notification);
         bottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
         bottomSheetLayout.setPeekOnDismiss(true);
+
+
+        List<Map<String, String>> data = new ArrayList<>();
+        setTitleValueToList(data, "Vehicle ID", "GO HOME");
+        setTitleValueToList(data, "Timestamp", "GO HOME");
+        setTitleValueToList(data, "Latitude", "GO HOME");
+        setTitleValueToList(data, "Longitude", "GO HOME");
+        setTitleValueToList(data, "Speed", "GO HOME");
+        setTitleValueToList(data, "Engine RPM", "GO HOME");
+        setTitleValueToList(data, "Fuel Level", "GO HOME");
+        setTitleValueToList(data, "Coolant Temperature", "GO HOME");
+        setTitleValueToList(data, "Total Fuel Used", "GO HOME");
+        setTitleValueToList(data, "Service Distance", "GO HOME");
+        setTitleValueToList(data, "Axle Weight", "GO HOME");
+        setTitleValueToList(data, "Odometer", "GO HOME");
+        setTitleValueToList(data, "Battery Voltage", "GO HOME");
+        SimpleAdapter adapter = new SimpleAdapter(NotificationActivity.this, data, android.R.layout.simple_list_item_2, new String[]{TITLE, VALUE}, new int[]{android.R.id.text1, android.R.id.text2});
+        ((ListView) findViewById(R.id.notificationlistView)).setAdapter(adapter);
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -71,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.current_data:
-                Intent intent1=new Intent(this, CurrentDataActivity.class);
+                Intent intent1=new Intent(this, MainActivity.class);
                 startActivity(intent1);
                 break;
 
@@ -87,10 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void showMenuSheet(final MenuSheetView.MenuType menuType) {
         MenuSheetView menuSheetView =
-                new MenuSheetView(MainActivity.this, menuType,"", new MenuSheetView.OnMenuItemClickListener() {
+                new MenuSheetView(NotificationActivity.this, menuType,"", new MenuSheetView.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NotificationActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
                         if (bottomSheetLayout.isSheetShowing()) {
                             bottomSheetLayout.dismissSheet();
                         }
@@ -104,45 +134,5 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetLayout.showWithSheetView(menuSheetView);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://de.rwth.hack.superdsa/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
-    }
-
-
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://de.rwth.hack.superdsa/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
-    }
 }
+
