@@ -22,6 +22,9 @@ android {
         exclude 'META-INF/NOTICE.txt'
     }
 }
+repositories{
+    jcenter()
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -29,4 +32,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'org.apache.commons:commons-lang3:3.4'
     compile project(':hackathon2016.lib')
+    compile 'com.flipboard:bottomsheet-core:1.5.0'
+    compile 'com.flipboard:bottomsheet-commons:1.5.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calender"
+        android:title="@string/workshop_app"
+        android:icon="@mipmap/calender"
+        />
+    <item
+        android:id="@+id/current_data"
+        android:title="@string/current_data"
+        android:icon="@mipmap/speed"
+        />
+
+    <item
+        android:id="@+id/health"
+        android:title="@string/health"
+        android:icon="@mipmap/health"
+        />
+    <item
+        android:id="@+id/history"
+        android:title="@string/history"
+        android:icon="@mipmap/history"
+        />
+
+</menu>
