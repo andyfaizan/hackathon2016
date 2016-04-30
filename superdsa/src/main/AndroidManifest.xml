@@ -49,6 +49,7 @@
         <activity android:name=".HealthActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".MainWSActivity"></activity>
     </application>
 
 </manifest>
