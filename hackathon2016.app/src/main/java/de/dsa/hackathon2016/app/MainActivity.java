@@ -133,6 +133,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.grid_menu:
                 showMenuSheet(MenuSheetView.MenuType.GRID);
                 break;
+            case R.id.notification:
+                Intent intent=new Intent(this, NotificationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.current_data:
+                Intent intent1=new Intent(this, MainActivity.class);
+                startActivity(intent1);
+                break;
 
         }
         return true;
