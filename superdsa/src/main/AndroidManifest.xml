@@ -48,7 +48,8 @@
         <activity android:name=".CurrentDataActivity" />
         <activity android:name=".HealthActivity" />
         <activity android:name=".LocationActivity" />
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".ServiceHistory"></activity>
     </application>
 
 </manifest>
