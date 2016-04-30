@@ -1,0 +1,94 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <View
+            android:layout_height="80px"
+            android:background="#440000" />
+        <TextView
+            android:text="Driving Patterns"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1" />
+        <TextView
+            android:text="Distance Travelled"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <View
+            android:layout_height="80px"
+            android:background="#440000" />
+        <TextView
+            android:text="Drive - Slope"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1" />
+        <TextView
+            android:text="100 Km"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <View
+            android:layout_height="80px"
+            android:background="#440000" />
+        <TextView
+            android:text="Drive - City Roads"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1" />
+        <TextView
+            android:text="2000 Km"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <View
+            android:layout_height="80px"
+            android:background="#440000" />
+        <TextView
+            android:text="Suggestions for performance"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1" />
+        <TextView
+            android:text="Change Engine Maps"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Additional Comments"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1" />
+        <EditText
+            android:width="200px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+    </TableRow>
+
+
+
+
+</TableLayout>
