@@ -1,7 +1,9 @@
 package de.rwth.hack.superdsa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,6 +64,14 @@ public class HealthActivity extends Activity {
 //                }else {
                 wheelStatus.setImageResource(R.drawable.sweat);
                 wheelsText.setText("Rear wheels need alignment!!");
+                wheelStatus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(HealthActivity.this, HistoryActivity.class);
+                        Bundle b = new Bundle();
+                        startActivity(intent);
+                    }
+                });
 //                }
             }
         });
