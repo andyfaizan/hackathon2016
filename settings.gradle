@@ -1,1 +1,1 @@
-include ':hackathon2016.app', ':hackathon2016.lib'
+include ':hackathon2016.app', ':hackathon2016.lib', ':superdsa'

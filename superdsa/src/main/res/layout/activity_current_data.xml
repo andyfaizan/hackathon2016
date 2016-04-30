@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="5dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#214193"
+    tools:context="de.rwth.hack.superdsa.CurrentDataActivity">
+    <com.github.lzyzsd.circleprogress.ArcProgress
+        android:id="@+id/speed"
+        android:background="#214193"
+        android:layout_marginLeft="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        custom:arc_progress="0"
+        custom:arc_max="240"
+        custom:arc_bottom_text="Speed"
+        custom:arc_suffix_text=" kmph"
+        custom:arc_bottom_text_size="20dp"/>
+
+    <com.github.lzyzsd.circleprogress.ArcProgress
+        android:id="@+id/rpm"
+        android:background="#214193"
+        android:layout_marginLeft="200dp"
+        android:layout_width="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_height="150dp"
+        custom:arc_progress="0"
+        custom:arc_max="6000"
+        custom:arc_bottom_text="Engine Speed"
+        custom:arc_suffix_text=" rpm"
+        custom:arc_bottom_text_size="20dp"/>
+
+    <com.github.lzyzsd.circleprogress.ArcProgress
+        android:id="@+id/fuel"
+        android:background="#214193"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="250dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        custom:arc_progress="100"
+        custom:arc_bottom_text="Fuel Level"
+        custom:arc_bottom_text_size="20dp"/>
+
+</RelativeLayout>
