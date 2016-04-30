@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/notificationlistView"
             android:layout_gravity="center_horizontal"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_below="@+id/refreshButton"/>
 
     </RelativeLayout>
