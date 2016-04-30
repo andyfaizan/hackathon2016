@@ -54,19 +54,9 @@ public class NotificationActivity extends AppCompatActivity {
 
 
         List<Map<String, String>> data = new ArrayList<>();
-        setTitleValueToList(data, "Vehicle ID", "GO HOME");
-        setTitleValueToList(data, "Timestamp", "GO HOME");
-        setTitleValueToList(data, "Latitude", "GO HOME");
-        setTitleValueToList(data, "Longitude", "GO HOME");
-        setTitleValueToList(data, "Speed", "GO HOME");
-        setTitleValueToList(data, "Engine RPM", "GO HOME");
-        setTitleValueToList(data, "Fuel Level", "GO HOME");
-        setTitleValueToList(data, "Coolant Temperature", "GO HOME");
-        setTitleValueToList(data, "Total Fuel Used", "GO HOME");
-        setTitleValueToList(data, "Service Distance", "GO HOME");
-        setTitleValueToList(data, "Axle Weight", "GO HOME");
-        setTitleValueToList(data, "Odometer", "GO HOME");
-        setTitleValueToList(data, "Battery Voltage", "GO HOME");
+        setTitleValueToList(data, "Service Alert", "Next Service due in 15 days");
+        setTitleValueToList(data, "Fuel Alert", "Fuel Running Low");
+        setTitleValueToList(data, "Wheel Alert", "Tyre Pressure");
         SimpleAdapter adapter = new SimpleAdapter(NotificationActivity.this, data, android.R.layout.simple_list_item_2, new String[]{TITLE, VALUE}, new int[]{android.R.id.text1, android.R.id.text2});
         ((ListView) findViewById(R.id.notificationlistView)).setAdapter(adapter);
 

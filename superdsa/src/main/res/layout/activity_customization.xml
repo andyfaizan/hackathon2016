@@ -3,78 +3,12 @@
     android:layout_height="fill_parent"
     >
 
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <View
-            android:layout_height="80px"
-            android:background="#440000" />
-        <TextView
-            android:text="Driving Patterns"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1" />
-        <TextView
-            android:text="Distance Travelled"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="2" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <View
-            android:layout_height="80px"
-            android:background="#440000" />
-        <TextView
-            android:text="Drive - Slope"
-
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1" />
-        <TextView
-            android:text="100 Km"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="2" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <View
-            android:layout_height="80px"
-            android:background="#440000" />
-        <TextView
-            android:text="Drive - City Roads"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1" />
-        <TextView
-            android:text="2000 Km"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="2" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <View
-            android:layout_height="80px"
-            android:background="#440000" />
-        <TextView
-            android:text="Suggestions for performance"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1" />
-        <TextView
-            android:text="Change Engine Maps"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="2" />
-    </TableRow>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/custlistView"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"/>
 
     <TableRow>
         <TextView

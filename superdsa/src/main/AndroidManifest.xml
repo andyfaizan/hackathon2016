@@ -30,7 +30,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyDUfl0OqaFxtV8ktZKaXjipBrykJeCj3Bc" />
 
         <activity android:name=".MainActivity" />
         <activity android:name=".NotificationActivity">
@@ -55,8 +55,10 @@
         <activity
             android:name=".HistoryActivity"
             android:label="Past Trends" />
-        <activity android:name=".ServiceHistory" />
-        <activity android:name=".MainWSActivity" />
+        <activity android:name=".ServiceHistory"
+            android:label="Service History"/>
+        <activity android:name=".MainWSActivity"
+            android:label="WorkShop Panel"/>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
@@ -70,9 +72,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Customization"></activity>
-        <activity android:name=".ProminentDefectsActivity" />
-        <activity android:name=".VehicleHistoryActivity"></activity>
+        <activity android:name=".Customization"
+            android:label="Customization"/>
+        <activity android:name=".ProminentDefectsActivity"
+            android:label="Issues"/>
+        <activity android:name=".VehicleHistoryActivity"
+            android:label="Performance Analysis"/>
     </application>
 
 </manifest>
