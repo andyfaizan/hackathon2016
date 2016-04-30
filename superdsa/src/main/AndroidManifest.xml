@@ -9,6 +9,11 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,15 +33,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_location">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".NotificationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.NOTIFICATION" />
@@ -44,12 +41,21 @@
                 <category android:name="android.intent.category.NOTFICATION" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScheduleActivity" />
-        <activity android:name=".CurrentDataActivity" />
-        <activity android:name=".HealthActivity" />
-        <activity android:name=".LocationActivity" />
-        <activity android:name=".HistoryActivity" />
-        <activity android:name=".ServiceHistory"></activity>
+
+        <activity android:name=".ScheduleActivity" android:label="Appointments Available"/>
+        <activity android:name=".CurrentDataActivity" android:label="Current Status"/>
+        <activity android:name=".HealthActivity" android:label="Car Health"/>
+        <activity android:name=".LocationActivity" android:label="Nearby Service Centres"/>
+        <activity android:name=".HistoryActivity" android:label="Past Trends"/>
+        <activity android:name=".ServiceHistory" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
