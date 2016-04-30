@@ -68,13 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.notification:
                 Intent intent=new Intent(this, NotificationActivity.class);
-                startActivity(intent);
+                this.startActivity(intent);
                 break;
-            case R.id.current_data:
-                Intent intent1=new Intent(this, CurrentDataActivity.class);
-                startActivity(intent1);
-                break;
-
         }
         return true;
     }
@@ -95,8 +90,26 @@ public class MainActivity extends AppCompatActivity {
                             bottomSheetLayout.dismissSheet();
                         }
                         if (item.getItemId() == R.id.history) {
-                            showMenuSheet(MenuSheetView.MenuType.GRID);
+                            Intent intent1=new Intent(MainActivity.this, HistoryActivity.class);
+                            startActivity(intent1);
                         }
+                        if (item.getItemId() == R.id.current_data) {
+                            Intent intent1=new Intent(MainActivity.this, CurrentDataActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.health) {
+                            Intent intent1=new Intent(MainActivity.this, HealthActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.calender) {
+                            Intent intent1=new Intent(MainActivity.this, LocationActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.logout) {
+                            Intent intent1=new Intent(MainActivity.this, MainActivity.class);
+                            startActivity(intent1);
+                        }
+//
                         return true;
                     }
                 });
