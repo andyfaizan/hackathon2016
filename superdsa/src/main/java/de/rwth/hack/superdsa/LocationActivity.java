@@ -3,8 +3,13 @@ package de.rwth.hack.superdsa;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.flipboard.bottomsheet.BottomSheetLayout;
+import com.flipboard.bottomsheet.commons.MenuSheetView;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,11 +31,14 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
     private Marker shownMarker;
+    protected BottomSheetLayout bottomSheetLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+        bottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
+        bottomSheetLayout.setPeekOnDismiss(true);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -112,5 +120,63 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                 });
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int itemId = item.getItemId();
+        switch (itemId){
+            case R.id.grid_menu:
+                showMenuSheet(MenuSheetView.MenuType.GRID);
+                break;
+            case R.id.notification:
+                Intent intent=new Intent(this, NotificationActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.actionitems, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void showMenuSheet(final MenuSheetView.MenuType menuType) {
+        MenuSheetView menuSheetView =
+                new MenuSheetView(LocationActivity.this, menuType,"", new MenuSheetView.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(LocationActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+                        if (bottomSheetLayout.isSheetShowing()) {
+                            bottomSheetLayout.dismissSheet();
+                        }
+                        if (item.getItemId() == R.id.history) {
+                            Intent intent1=new Intent(LocationActivity.this, HistoryActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.current_data) {
+                            Intent intent1=new Intent(LocationActivity.this, CurrentDataActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.health) {
+                            Intent intent1=new Intent(LocationActivity.this, HealthActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.calender) {
+                            Intent intent1=new Intent(LocationActivity.this, LocationActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.logout) {
+                            Intent intent1=new Intent(LocationActivity.this, LoginActivity.class);
+                            startActivity(intent1);
+                        }
+                        return true;
+
+                    }
+                });
+        menuSheetView.inflateMenu(R.menu.create);
+        bottomSheetLayout.showWithSheetView(menuSheetView);
     }
 }

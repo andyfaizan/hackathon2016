@@ -3,22 +3,32 @@ package de.rwth.hack.superdsa;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.flipboard.bottomsheet.BottomSheetLayout;
+import com.flipboard.bottomsheet.commons.MenuSheetView;
 
 import de.dsa.hackathon2016.lib.IVehicleStatus;
 import de.dsa.hackathon2016.lib.VehicleStatusReceiver;
 import de.dsa.hackathon2016.lib.VehicleStatusUtils;
 
-public class HealthActivity extends Activity {
-
+public class HealthActivity extends AppCompatActivity {
+    protected BottomSheetLayout bottomSheetLayout;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
-        String vehicleId = getIntent().getExtras().getString("vehicleNum");
+        String vehicleId = "0468";
+        bottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
+        bottomSheetLayout.setPeekOnDismiss(true);
 
         VehicleStatusUtils.getLastVehicleStatus(vehicleId, new VehicleStatusReceiver() {
             @Override
@@ -76,6 +86,64 @@ public class HealthActivity extends Activity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int itemId = item.getItemId();
+        switch (itemId){
+            case R.id.grid_menu:
+                showMenuSheet(MenuSheetView.MenuType.GRID);
+                break;
+            case R.id.notification:
+                Intent intent=new Intent(this, NotificationActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.actionitems, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void showMenuSheet(final MenuSheetView.MenuType menuType) {
+        MenuSheetView menuSheetView =
+                new MenuSheetView(HealthActivity.this, menuType,"", new MenuSheetView.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(HealthActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+                        if (bottomSheetLayout.isSheetShowing()) {
+                            bottomSheetLayout.dismissSheet();
+                        }
+                        if (item.getItemId() == R.id.history) {
+                            Intent intent1=new Intent(HealthActivity.this, HistoryActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.current_data) {
+                            Intent intent1=new Intent(HealthActivity.this, CurrentDataActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.health) {
+                            Intent intent1=new Intent(HealthActivity.this, HealthActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.calender) {
+                            Intent intent1=new Intent(HealthActivity.this, LocationActivity.class);
+                            startActivity(intent1);
+                        }
+                        if (item.getItemId() == R.id.logout) {
+                            Intent intent1=new Intent(HealthActivity.this, LoginActivity.class);
+                            startActivity(intent1);
+                        }
+                        return true;
+
+                    }
+                });
+        menuSheetView.inflateMenu(R.menu.create);
+        bottomSheetLayout.showWithSheetView(menuSheetView);
     }
 
 
