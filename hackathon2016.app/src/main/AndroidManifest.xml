@@ -14,7 +14,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="de.dsa.hackathon2016.app.HealthActivity"></activity>
+        <activity android:name="de.dsa.hackathon2016.app.HealthActivity" />
+        <activity android:name="de.dsa.hackathon2016.app.HistoryActivity"></activity>
     </application>
 
 </manifest>
