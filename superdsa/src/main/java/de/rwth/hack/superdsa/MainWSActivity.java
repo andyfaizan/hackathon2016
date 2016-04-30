@@ -1,6 +1,7 @@
 package de.rwth.hack.superdsa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,9 @@ public class MainWSActivity extends Activity {
         serviceList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainWSActivity.this, ProminentDefectsActivity.class);
+                Bundle b = new Bundle();
+                startActivity(intent);
             }
         });
         RelativeLayout vehicleHistory = (RelativeLayout) findViewById(R.id.vehiclehistoryLayout);
@@ -24,13 +27,19 @@ public class MainWSActivity extends Activity {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(MainWSActivity.this, VehicleHistoryActivity.class);
+                Bundle b = new Bundle();
+                startActivity(intent);
+
             }
         });
         RelativeLayout serviceHistory = (RelativeLayout) findViewById(R.id.servicehistoryLayout);
         serviceHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainWSActivity.this, ServiceHistory.class);
+                Bundle b = new Bundle();
+                startActivity(intent);
             }
         });
         RelativeLayout customization = (RelativeLayout) findViewById(R.id.customizationLayout);
