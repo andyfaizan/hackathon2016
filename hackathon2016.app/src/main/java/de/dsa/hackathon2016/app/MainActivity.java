@@ -19,6 +19,7 @@
 package de.dsa.hackathon2016.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -57,6 +58,12 @@ public class MainActivity extends Activity {
                     Toast.makeText(MainActivity.this, "Empty vehicle ID", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Intent intent = new Intent(MainActivity.this, HealthActivity.class);
+                Bundle b = new Bundle();
+                b.putString("vehicleNum", vehicleId); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                startActivity(intent);
+
                 VehicleStatusUtils.getLastVehicleStatus(vehicleId, new VehicleStatusReceiver() {
                     @Override
                     public void onStatusReceived(IVehicleStatus vehicleStatus) {
