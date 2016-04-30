@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+
+    <item
+        android:id="@+id/notification"
+        android:icon="@mipmap/notifications"
+        android:title="grid"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/suggestions"
+        android:icon="@mipmap/suggestions"
+        android:title="grid"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/grid_menu"
+        android:icon="@mipmap/gridmenu"
+        android:title="grid"
+        app:showAsAction="ifRoom"/>
+
+</menu>

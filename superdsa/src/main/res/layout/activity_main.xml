@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flipboard.bottomsheet.BottomSheetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomsheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    layout_width="wrap_content"
+    layout_height="wrap_content">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/refreshButton"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh"
+            android:id="@+id/refreshButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignBottom="@+id/vehicleIdEditText"
+            android:layout_alignEnd="@+id/listView" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/vehicleIdEditText"
+            android:maxLines="1"
+            android:layout_below="@+id/vehicleIdTextView"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/refreshButton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Vehicle ID:"
+            android:id="@+id/vehicleIdTextView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+    </RelativeLayout>
+</com.flipboard.bottomsheet.BottomSheetLayout>

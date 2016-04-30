@@ -105,7 +105,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                 mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                     @Override
                     public void onInfoWindowClick(Marker marker) {
-                        Intent intent = new Intent(LocationActivity.this, CurrentDataActivity.class);
+                        Intent intent = new Intent(LocationActivity.this, HealthActivity.class);
+                        intent.putExtra("vehicleNum", "0410");
                         startActivity(intent);
                     }
                 });

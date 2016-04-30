@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <color name="primary">#FFE12828</color>
+    <color name="primary_dark">#c32727</color>
+    <color name="accent">#FF0099CC</color>
 </resources>
