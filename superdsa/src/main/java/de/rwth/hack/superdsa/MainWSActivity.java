@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-public class MainWSActivity extends Activity {
+public class MainWSActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
