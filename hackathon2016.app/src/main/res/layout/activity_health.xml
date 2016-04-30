@@ -12,7 +12,7 @@
     android:background="@color/white">
     <RelativeLayout
         android:layout_width="150dp"
-        android:layout_height="190dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
@@ -37,7 +37,7 @@
 
 <RelativeLayout
     android:layout_width="150dp"
-    android:layout_height="190dp"
+    android:layout_height="200dp"
     android:layout_alignParentTop="true"
     android:layout_alignParentEnd="true">
 
@@ -60,7 +60,7 @@
 
 <RelativeLayout
     android:layout_width="150dp"
-    android:layout_height="190dp"
+    android:layout_height="200dp"
     android:layout_alignParentBottom="true"
     android:layout_alignParentStart="true">
 
@@ -83,7 +83,7 @@
 <!-- By Pumbaa80 - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=723508 -->
 <RelativeLayout
     android:layout_width="150dp"
-    android:layout_height="190dp"
+    android:layout_height="200dp"
     android:layout_alignParentBottom="true"
     android:layout_alignParentEnd="true">
 
