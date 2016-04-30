@@ -12,7 +12,6 @@
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -48,6 +47,7 @@
         <activity android:name=".LocationActivity" android:label="Nearby Service Centres"/>
         <activity android:name=".HistoryActivity" android:label="Past Trends"/>
         <activity android:name=".ServiceHistory" />
+        <activity android:name=".MainWSActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">

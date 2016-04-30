@@ -357,7 +357,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     Intent intent = new Intent(LoginActivity.this, CurrentDataActivity.class);
                     startActivity(intent);
                 } else if (mUser.equalsIgnoreCase("service crew")){
-                    Intent intent = new Intent(LoginActivity.this, LocationActivity.class); // Service crew activity
+                    Intent intent = new Intent(LoginActivity.this, MainWSActivity.class);
                     startActivity(intent);
                 }
                 finish();
